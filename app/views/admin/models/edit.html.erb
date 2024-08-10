@@ -1,0 +1,10 @@
+<h1>Editing model</h1>
+
+<%= render "form", model: @model, url: admin_model_path(@model) %>
+
+<br>
+
+<div>
+  <%= link_to "Show this model", edit_admin_model_path(@model) %> |
+  <%= link_to "Back to models", admin_models_path %>
+</div>
