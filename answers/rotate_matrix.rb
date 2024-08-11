@@ -22,7 +22,7 @@ end
 #   # Transpose the matrix
 #   n = matrix.size
 #   (0...n).each do |i|
-#     (i+1...n).each do |j|
+#     (i...n).each do |j|
 #       matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 #     end
 #   end
@@ -34,3 +34,10 @@ end
 
 #   matrix
 # end
+
+# def rotate_matrix(matrix)
+#   p matrix
+#   p matrix.reverse
+#   p matrix.reverse.transpose
+# end
+

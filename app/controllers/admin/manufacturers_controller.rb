@@ -1,4 +1,4 @@
-class ManufacturersController < ApplicationController
+class Admin::ManufacturersController < ApplicationController
   before_action :set_manufacturer, only: %i[ show edit update destroy ]
 
   # GET /manufacturers or /manufacturers.json
@@ -25,7 +25,7 @@ class ManufacturersController < ApplicationController
 
     respond_to do |format|
       if @manufacturer.save
-        format.html { redirect_to manufacturer_url(@manufacturer), notice: "Manufacturer was successfully created." }
+        format.html { redirect_to admin_manufacturer_url(@manufacturer), notice: "Manufacturer was successfully created." }
         format.json { render :show, status: :created, location: @manufacturer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ManufacturersController < ApplicationController
   def update
     respond_to do |format|
       if @manufacturer.update(manufacturer_params)
-        format.html { redirect_to manufacturer_url(@manufacturer), notice: "Manufacturer was successfully updated." }
+        format.html { redirect_to admin_manufacturer_url(@manufacturer), notice: "Manufacturer was successfully updated." }
         format.json { render :show, status: :ok, location: @manufacturer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class ManufacturersController < ApplicationController
     @manufacturer.destroy!
 
     respond_to do |format|
-      format.html { redirect_to manufacturers_url, notice: "Manufacturer was successfully destroyed." }
+      format.html { redirect_to admin_manufacturers_url, notice: "Manufacturer was successfully destroyed." }
       format.json { head :no_content }
     end
   end

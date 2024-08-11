@@ -1,4 +1,4 @@
-class SmartphonesController < ApplicationController
+class Admin::SmartphonesController < ApplicationController
   before_action :set_smartphone, only: %i[ show edit update destroy ]
 
   # GET /smartphones or /smartphones.json
@@ -25,7 +25,7 @@ class SmartphonesController < ApplicationController
 
     respond_to do |format|
       if @smartphone.save
-        format.html { redirect_to smartphone_url(@smartphone), notice: "Smartphone was successfully created." }
+        format.html { redirect_to admin_smartphone_url(@smartphone), notice: "Smartphone was successfully created." }
         format.json { render :show, status: :created, location: @smartphone }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class SmartphonesController < ApplicationController
   def update
     respond_to do |format|
       if @smartphone.update(smartphone_params)
-        format.html { redirect_to smartphone_url(@smartphone), notice: "Smartphone was successfully updated." }
+        format.html { redirect_to admin_smartphone_url(@smartphone), notice: "Smartphone was successfully updated." }
         format.json { render :show, status: :ok, location: @smartphone }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class SmartphonesController < ApplicationController
     @smartphone.destroy!
 
     respond_to do |format|
-      format.html { redirect_to smartphones_url, notice: "Smartphone was successfully destroyed." }
+      format.html { redirect_to admin_smartphones_url, notice: "Smartphone was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -1,0 +1,10 @@
+<h1>Editing smartphone</h1>
+
+<%= render "form", smartphone: @smartphone, url: edit_admin_smartphone_path(@smartphone) %>
+
+<br>
+
+<div>
+  <%= link_to "Show this smartphone", admin_smartphone_path(@smartphone) %> |
+  <%= link_to "Back to smartphones", admin_smartphones_path %>
+</div>

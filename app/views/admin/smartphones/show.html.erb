@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @smartphone %>
+
+<div>
+  <%= link_to "Edit this smartphone", edit_admin_smartphone_path(@smartphone) %> |
+  <%= link_to "Back to smartphones", admin_smartphones_path %>
+
+  <%= button_to "Destroy this smartphone", admin_smartphone_path(@smartphone), method: :delete %>
+</div>

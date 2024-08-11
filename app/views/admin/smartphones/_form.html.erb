@@ -1,4 +1,4 @@
-<%= form_with(model: smartphone) do |form| %>
+<%= form_with(model: smartphone, url: url) do |form| %>
   <% if smartphone.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(smartphone.errors.count, "error") %> prohibited this smartphone from being saved:</h2>
@@ -48,6 +48,6 @@
 
   <div class="mb-3 form-group">
     <%= form.button "Submit", class: "btn btn-primary" %>
-    <%= link_to "Cancel", smartphones_path, class: "btn btn-secondary" %>
+    <%= link_to "Cancel", admin_smartphones_path, class: "btn btn-secondary" %>
   </div>
 <% end %>

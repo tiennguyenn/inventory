@@ -1,10 +1,10 @@
 <h1>Editing manufacturer</h1>
 
-<%= render "form", manufacturer: @manufacturer %>
+<%= render "form", manufacturer: @manufacturer, url: admin_manufacturer_path(@manufacturer) %>
 
 <br>
 
 <div>
-  <%= link_to "Show this manufacturer", @manufacturer %> |
-  <%= link_to "Back to manufacturers", manufacturers_path %>
+  <%= link_to "Show this manufacturer", admin_manufacturer_path(@manufacturer) %> |
+  <%= link_to "Back to manufacturers", admin_manufacturers_path %>
 </div>

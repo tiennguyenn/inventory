@@ -6,9 +6,9 @@
   <% @smartphones.each do |smartphone| %>
     <%= render smartphone %>
     <p>
-      <%= link_to "Show this smartphone", smartphone %>
+      <%= link_to "Show this smartphone", admin_smartphone_path(smartphone) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New smartphone", new_smartphone_path %>
+<%= link_to "New smartphone", new_admin_smartphone_path %>
