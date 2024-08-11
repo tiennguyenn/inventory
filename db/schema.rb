@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_10_221857) do
-  create_table "admin_models", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.1].define(version: 2024_08_11_145152) do
   create_table "manufacturers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -29,4 +23,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_10_221857) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "smartphones", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "manufacturer_id", null: false
+    t.bigint "model_id", null: false
+    t.string "data_memory"
+    t.integer "year_of_manufacture"
+    t.string "os_version"
+    t.string "body_color"
+    t.decimal "price", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manufacturer_id"], name: "index_smartphones_on_manufacturer_id"
+    t.index ["model_id"], name: "index_smartphones_on_model_id"
+  end
+
+  add_foreign_key "smartphones", "manufacturers"
+  add_foreign_key "smartphones", "models"
 end

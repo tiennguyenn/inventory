@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :smartphones
   namespace :admin do
     resources :models
     resources :manufacturers

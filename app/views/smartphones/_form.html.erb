@@ -1,0 +1,53 @@
+<%= form_with(model: smartphone) do |form| %>
+  <% if smartphone.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(smartphone.errors.count, "error") %> prohibited this smartphone from being saved:</h2>
+
+      <ul>
+        <% smartphone.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3 form-group">
+    <%= form.label :manufacturer_id, class: "form-label" %>
+    <%= form.select :manufacturer_id, Manufacturer.all.collect {|manu| [manu.name, manu.id]}, {prompt: "Select a manufacturer"}, {class: "form-select"} %>
+  </div>
+
+  <div class="mb-3 form-group">
+    <%= form.label :model_id, class: "form-label" %>
+    <%= form.select :model_id, Model.all.collect {|m| [m.name, m.id]} , {prompt: "Select a model"}, { class: "form-select" } %>
+  </div>
+
+  <div class="mb-3 form-group">
+    <%= form.label :data_memory, class: "form-label" %>
+    <%= form.text_field :data_memory, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 form-group">
+    <%= form.label :year_of_manufacture, class: "form-label" %>
+    <%= form.number_field :year_of_manufacture, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 form-group">
+    <%= form.label :os_version, class: "form-label" %>
+    <%= form.text_field :os_version, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 form-group">
+    <%= form.label :body_color, class: "form-label" %>
+    <%= form.text_field :body_color, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 form-group">
+    <%= form.label :price, class: "form-label" %>
+    <%= form.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 form-group">
+    <%= form.button "Submit", class: "btn btn-primary" %>
+    <%= link_to "Cancel", smartphones_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>
