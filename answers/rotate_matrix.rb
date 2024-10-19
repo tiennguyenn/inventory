@@ -15,29 +15,35 @@ end
 
 # Time complexity
 # O(n^2)
+# Space complexity
+# O(n*n)
 
-# Other way, not working now.
-
+# Other way, using transpose and reverse
 # def rotate_matrix(matrix)
-#   # Transpose the matrix
 #   n = matrix.size
-#   (0...n).each do |i|
-#     (i...n).each do |j|
-#       matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-#     end
-#   end
 
 #   # Reverse each row
 #   (0...n).each do |i|
 #     matrix[i].reverse!
 #   end
 
+#   # Transpose the matrix
+#   (0...n).each do |i|
+#     (i...n).each do |j|
+#       matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+#     end
+#   end
+
 #   matrix
 # end
 
+# Using build-in methods
 # def rotate_matrix(matrix)
-#   p matrix
-#   p matrix.reverse
-#   p matrix.reverse.transpose
+#   n = matrix.size
+
+#   flags = matrix.each {|row| row.size == n}
+#   return false if flags.any?
+
+#   matrix.each(&:reverse!).transpose
 # end
 

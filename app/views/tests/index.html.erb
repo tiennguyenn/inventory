@@ -1,0 +1,23 @@
+<h1>Tests</h1>
+
+<p><%= session[:user_id] %></p>
+
+<%= @current_model.name -%> this is a p
+
+<%
+=begin%>
+ <% if flash[:notice] %>
+<%= content_tag :p, flash[:notice] %>
+<% end %> 
+<%
+=end%>
+
+<% flash.each do |name, msg| %>
+<%= content_tag :p, msg, class: name %>
+<% end %>
+
+<%= cookies[:name] -%>
+
+<%= cookies[:age] %>
+
+<%= render @tests || 'empty_list' %>

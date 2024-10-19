@@ -8,6 +8,7 @@ class Admin::ModelsController < ApplicationController
 
   # GET /models/1 or /models/1.json
   def show
+    raise params.inspect
   end
 
   # GET /models/new
@@ -17,6 +18,10 @@ class Admin::ModelsController < ApplicationController
 
   # GET /models/1/edit
   def edit
+  end
+
+  def display
+    raise params
   end
 
   # POST /models or /models.json

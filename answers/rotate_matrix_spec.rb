@@ -31,6 +31,7 @@ describe '#rotate_matrix' do
       [4,5,6],
       [7,8,9]
     ]
+
     result = rotate_matrix(matrix)
     expect(result).to eq([
       [3,6,9],
